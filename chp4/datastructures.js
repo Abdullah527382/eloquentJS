@@ -346,3 +346,78 @@ console.log(phi(tableFor("peanut teeth", JOURNAL)));
 The phenomenon occurs precisely when Jacques eats 
 peanuts and fails to brush his teeth
 */
+
+/*
+Further arrays: 
+ - unshift and shift add/remove things at start of array
+   as opposed to push/pop (end of an array)
+ - 
+*/
+let todolist = [];
+function remember(task){
+	todolist.push(task);
+}
+function getTask(){
+	return todolist.shift();
+}
+function rememberUrgent(task){
+	todolist.unshift(task);
+}
+
+/*
+We call getTask() to get and remove task front item, 
+similarly rememberUrgent() adds task to the front 
+*/
+
+/*
+Note: 
+- to SEARCH for a specific value, use indexOf()
+- this is specific to arrays
+- returns index at which the requested value was 
+  found, otherwise -1 if wasnt found 
+- to search from end instead of start: do 
+  lastIndexOf()
+*/
+
+console.log([1,2,3,2,1].indexOf(2)); // 1
+console.log([1,2,3,2,1].lastIndexOf(2)); // 3
+
+/*
+Note:
+- consider an array method: slice which takes 2 
+  arguments: start,end and returns the array between 
+  them
+- start index = inclusive, end index = exclusive
+- if start index not given, returns all elements 
+  after start index
+*/
+
+console.log([0,1,3,4,5].slice(2,4)); // [2,3]
+console.log([0,1,2,3,4,5].slice(2))l // [2,3,4,5]
+
+/*
+concat method: 
+- glues arrays together similar to + operator for 
+  strings, lets apply glue and concat together
+*/
+
+function remove(array,index){
+	return array.slice(0, index)
+		.concat(array.slice(index + 1));
+}
+console.log(remove(["a", "b", "c", "d", "e"]),2);
+// → ["a", "b", "d", "e"] 
+
+/*
+strings and their properties:
+- both indexOf and slice are quit useful methods
+- a string's indexOf can search for a string 
+  containing more than 1 letter eg. below 
+- the trim method removes whitespaces(spaces, \n, etc.)
+- padStart: takes the desired length and padding 
+  character as arguments (last chp)
+- split: splits string (every occurence of another string
+, join: joins string
+*/
+console.log("one two three".indexOf("ee")); //11
+console.log(String(6).padStart(3,"0")); // 006
