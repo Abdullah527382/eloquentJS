@@ -418,6 +418,68 @@ strings and their properties:
   character as arguments (last chp)
 - split: splits string (every occurence of another string
 , join: joins string
+- repeat a string with .repeat()
 */
 console.log("one two three".indexOf("ee")); //11
 console.log(String(6).padStart(3,"0")); // 006
+console.log("LA".repeat(3)); // LALALA
+
+/*
+Rest parameters:
+- Its useful for a function to accept any no. of 
+  arguments, i.e Math.max computer max of ALL args
+- Such a function will include 3 dots, before last 
+  parameter. 
+*/
+
+function max(...numbers){
+	let result = -Infinity;
+	for (let number of numbers){
+		if (number > result) result = number;
+	}
+	return result;
+}
+console.log(max(4,1,9,-2)); // 9
+/*
+We can use this to call a func with an array of args 
+*/
+let nums = [5,1,7];
+console.log(max(...numbers)); // 7
+
+/*
+Math object:
+- Math is a grab bag full of number-related functions 
+- Math object is just a container to group a bunch of 
+  related functionality
+- Provides namespace so all these functions dont pollute 
+  as global bindings eg. the max function wont be 
+  overwritten as it is tucked safely inside math object
+- use Math.floor (rounds down nearest int), otherwise 
+  Math.ceil (rounds up), Math.abs takes absolute value
+*/
+/*
+Destructure:
+- In our phi function, we can replace the bindings;
+  table, with [n00, n01, n10, n11], use square brackets
+- works similarly for objects, use braces instead of 
+  square brackets 
+- works when you know the value you are binding is an
+  array
+*/
+let{name} = {name: "Faraji", age: 23};
+console.log(name); // Faraji 
+
+/*
+JSON: 
+Serializing data, i.e. converting into a flat desc.
+- Think of sending a file over the network (or even
+  saving it on the computer, we have 
+  to convert these tangles of memory addresses to a 
+  description which is stored/sent, we could send the
+  whole computer memory and its address but thats bad
+- JS Object Notation, used in WWW 
+- Restrictions: Looks similar to JS' way of arrays and
+  objects but all property names are surrounded by double
+  quotes and only simple data expressions allowed, no 
+  function calls, bindings etc. AND no comments eg.
+*/
