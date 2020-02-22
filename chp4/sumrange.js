@@ -1,3 +1,20 @@
+/*
+Created by Abdullah Ahmed 22/02/2020
+
+Includes a range function which takes 3 arguments;
+Start, end, step. Returns array containing all numbers
+from start upto (including) end. The step argument, that
+changes the incremental behaviour, otherwise if no 
+step argument is given, increment by 1.
+
+Includes a sum function which takes an array and returns 
+the sum of the number. 
+
+Negative steps will usually always be placed when 
+start > end, thus just take the absolute value. 
+
+*/
+
 
 function range(start, end, step){
 	let array = [];
@@ -13,7 +30,7 @@ function range(start, end, step){
 	}
 	return array;
 }
-console.log(range(5,2,-1));
+console.log(range(10,2,2));
 
 function sum (array){
 	let sum = 0, i = 0;
@@ -23,4 +40,4 @@ function sum (array){
 	}
 	return sum;
 } 
-console.log(sum(range(5,2,-1)));
+console.log(sum(range(10,2,2)));
