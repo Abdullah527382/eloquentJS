@@ -13,6 +13,9 @@ the sum of the number.
 Negative steps will usually always be placed when 
 start > end, thus just take the absolute value. 
 
+There is another way to wrute the function with let and of 
+but I will stick to my current method. For the time being
+
 */
 
 
