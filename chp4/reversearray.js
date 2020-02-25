@@ -21,13 +21,15 @@ Note: Use swap whilst looping through
 half the array, use Math.floor when rounding.
 Search swap in js. 
 */
-let arrayValue = [1, 2, 3, 4, 5];
+let arrayValue = ["ME", "ITS", "HI"];
 reverseArrayInPlace(arrayValue);
 function reverseArrayInPlace(array){
-	let j = array.length;
-	for (let i = 0; i <= array.length; i++){
-		array[i] == array[j];
-		j--;
+	// Create a local temp binding 
+	let temp = 0;
+	for (let i = 0; i <= Math.floor(array.length/2); i++){
+		temp = array[i];
+		array[i] = array[array.length - 1 - i];
+		array[array.length - 1 - i] = temp;
 	}
 	return array;
 }
