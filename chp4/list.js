@@ -13,15 +13,17 @@ number and returns the element at the given position
 in the list (with zero referring to the first element) 
 or undefined when there is no such element.
 */
-
+let list = {
+	value: 0,
+	rest: null
+} 
 // Builds a list from a given array
 function arrayToList(array){
 
-//let X = 0;
 	for (let i = array.length; i >= 0; i--){
 		X = array[i];
 		list = {value: X, rest: list}
 		}
 	return list;
 }
-console.log(arrayToList[10,20,30])
+console.log(arrayToList([10,20,30,40,50,60]))
