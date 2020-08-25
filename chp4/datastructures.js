@@ -39,7 +39,7 @@ console.log(wor.toUpperCase());
 
 /*
 Properties that contain functions are called methods
-of the value thye belong to, i.e toUpperCase is a 
+of the value they belong to, i.e toUpperCase is a 
 method of a string
 - The below example demostrates 2 ways you can use to
 manipulate arrays:
@@ -69,7 +69,7 @@ of properties, uses braces:
 Everything inside is seperated by commas, each
 property has a name followed by a colon
 Think of objects like an octopus with any number 
-of tentacles, each tetacle has a name tattooed on it
+of tentacles, each tentacle has a name tattooed on it
 
 */
 let day1 = {
@@ -151,14 +151,13 @@ cannot be changed
 */
 const score = {visitors:0,home:0};
 score.visitors = 1; //works 
-score ={visitors:1, home:1}; //not allowed 
+score = {visitors:1, home:1}; //not allowed 
 
 
 /*
 The lycanthrope’s log
 Jack starts his JS interpreter and sets up an
-environment: 
-*/
+environment:*/
 
 let journal = [];
 function addEntry(events, squirrel){
@@ -175,7 +174,7 @@ taken from the binding with same name
 */
 
 /*
-Every evening at 10pm, he records the day,  ater 
+Every evening at 10pm, he records the day, after 
 we want to see the correlation between pizza and
 squirrelification, we essentially make a 2x2 table
 with outcomes as: 00, 01, 10, 11
@@ -192,7 +191,7 @@ addEntry(["weekend", "cycling", "break", "peanuts",
 Computing correlation: a 2x2 table in JS can be 
 simply represented by with a 4 element array:
 ([76, 9, 4, 1]), we interpret these as 2 bit 
-numbers, i.e. 10 represents evenys jack turning 
+numbers, i.e. 10 represents events jack turning 
 into squirrel (1) and not eating pizza (0), 
 this happened 4 times thus we store this at 
 index 2 of the array 
@@ -332,7 +331,7 @@ for (let event of journalEvents(JOURNAL)){
 
 /*
 We see positive correlation with peanuts and less
-with brushig teeth, so lets try this:
+with brushing teeth, so lets try this:
 */
 
 for (let entry of JOURNAL){
@@ -471,7 +470,7 @@ console.log(name); // Faraji
 
 /*
 JSON: 
-Serializing data, i.e. converting into a flat desc.
+Serializing data, i.e. converting into a flat description
 - Think of sending a file over the network (or even
   saving it on the computer, we have 
   to convert these tangles of memory addresses to a 
@@ -483,3 +482,21 @@ Serializing data, i.e. converting into a flat desc.
   quotes and only simple data expressions allowed, no 
   function calls, bindings etc. AND no comments eg.
 */
+
+/*
+A journal entry might look like this below
+JS gives us functions: JSON.stringify and JSON.parse
+to convert data to and from this format
+*/
+{
+	"squirrel" : false,
+	"events" : ["work", "touched tree", "pizzatime"] 
+}
+
+let string = JSON.stringify({squirrel : false,events:
+								["weekend"]});
+console.log(string); 
+// → {"squirrel":false,"events":["weekend"]}
+console.log(JSON.parse(string).events);
+// -> ["weekend"]
+

@@ -1,4 +1,5 @@
 // Will start this exercise on 24/02/20
+// Update: Completed 25/02/2020
 /*
 For the reverseArray function, we want to make a 
 new array that contains the array's elements but 
